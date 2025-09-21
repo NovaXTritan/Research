@@ -1,0 +1,2 @@
+self.addEventListener('install',e=>{e.waitUntil(caches.open('wbest-v1').then(c=>c.addAll(['./','./index.html','./dashboard.html','./deep-research.html','./assets/styles.css','./assets/app.js'])))});
+self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))})
